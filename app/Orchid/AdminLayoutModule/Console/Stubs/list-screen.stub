@@ -1,0 +1,36 @@
+<?php
+
+    namespace App\Orchid\Screens\DirectoryName;
+
+    use App\Models\ModelName;
+    use App\Orchid\RocontModule\Abstraction\ListScreenPattern;
+    use Orchid\Screen\Actions\Link;
+    use Orchid\Screen\TD;
+    use Orchid\Support\Facades\Layout;
+
+    class StubListScreen extends ListScreenPattern
+    {
+        protected ?string $listRedirect = 'platform.ITEMS.list';
+        protected ?string $updateRoute = 'platform.ITEMS.edit';
+        public string $name = 'Список ITEMS';
+
+        public function query()
+        {
+            $this->model = ModelName::query();
+            return parent::query();
+        }
+
+        public function layout(): iterable
+        {
+            return [
+                Layout::table('items', [
+                    TD::make('id', 'ID')->width(60)->alignLeft(),
+
+                    // table columns ...
+
+                    TD::make('created_at', 'Дата')->width(100)->alignRight()->render(fn ($item) => $item->created_at?->format('d-m-Y')),
+                    TD::make()->width(10)->alignRight()->render(fn ($item) => Link::make()->icon('wrench')->route($this->updateRoute, $item)),
+                ])
+            ];
+        }
+    }

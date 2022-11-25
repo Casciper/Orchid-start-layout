@@ -1,0 +1,85 @@
+@import 'hamburger';
+
+
+@media (min-width: 768px) {
+    .aside{
+        width: 60px;
+        min-width: 60px;
+        max-width: 60px;
+        overflow: hidden;
+        transition: .3s;
+        .text-muted{
+            white-space: nowrap;
+        }
+        .nav-item{
+            span{
+                white-space: nowrap;
+            }
+        }
+        .badge{
+            white-space: nowrap;
+        }
+        .thumb-sm.avatar{
+            right: 15px;
+        }
+        .header-toggler{
+            span{
+                white-space: nowrap;
+            }
+        }
+        .nav-item{
+            span{
+                display: none;
+            }
+            .text-muted{
+                display: none;
+            }
+            .badge{
+                display: none;
+            }
+        }
+        .to-top-btn{
+            span{
+                white-space: nowrap;
+            }
+            small{
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+            }
+        }
+        .made-by{
+            white-space: nowrap;
+        }
+    }
+    .aside:has(.closed){
+        .nav{
+            &.sub-menu{
+                .nav-link{
+                    padding: 8px 5px;
+                    justify-content: center;
+                    svg{
+                        margin-right: 0!important;
+                    }
+                }
+            }
+        }
+        .to-top-btn{
+            span{
+                display: none;
+            }
+        }
+        .made-by{
+            display: none!important;
+        }
+    }
+    .aside.opened{
+        width: 100% !important;
+        min-width: 280px!important;
+        max-width: 280px!important;
+        transition: .3s;
+        .thumb-sm.avatar{
+            right: 0px;
+        }
+    }
+}
