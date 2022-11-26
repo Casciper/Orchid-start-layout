@@ -109,12 +109,8 @@ return [
     */
 
     'resource' => [
-        'stylesheets' => [
-            'https://uicdn.toast.com/editor/latest/toastui-editor.min.css'
-        ],
-        'scripts'     => [
-            'https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js'
-        ],
+        'stylesheets' => [],
+        'scripts'     => [],
     ],
 
     /*

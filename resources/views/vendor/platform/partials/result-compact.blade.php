@@ -25,7 +25,7 @@
 @empty
 
     <p class="ms-3 me-3 mb-0 text-center">
-        {{ __('There are no records in this view.') }}
+         В данной таблице нет записей.
     </p>
 
 @endforelse

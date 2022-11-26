@@ -2,8 +2,8 @@
 
     namespace App\Orchid\Screens\DirectoryName;
 
-    use App\Orchid\RocontModule\Abstraction\EditScreenPattern;
-    use App\Orchid\RocontModule\Traits\CommandBarDeletableTrait;
+    use App\Orchid\AdminLayoutModule\Abstraction\EditScreenPattern;
+    use App\Orchid\AdminLayoutModule\Traits\CommandBarDeletableTrait;
     use Illuminate\Http\Request;
     use Orchid\Support\Facades\Layout;
 
