@@ -57,7 +57,7 @@
                     <x-orchid-icon :path="$iconNotFound" class="block m-b"/>
                 @endisset
 
-                {!!  $textNotFound !!}
+                В данной таблице нет записей.
             </h3>
 
             {!! $subNotFound !!}

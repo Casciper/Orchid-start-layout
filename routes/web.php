@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::view('/all-items', 'admin.slides.style-layout.all-items');
+Route::view('/all-items-one-btn', 'admin.slides.style-layout.all-items-one-btn');
+Route::view('/without-btn', 'admin.slides.style-layout.without-btn');
+Route::view('/only-title', 'admin.slides.style-layout.only-title');

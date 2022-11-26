@@ -12,6 +12,8 @@ use App\Orchid\Screens\Examples\ExampleTextEditorsScreen;
 use App\Orchid\Screens\PlatformScreen;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
+use App\Orchid\Screens\Slide\SlideEdit;
+use App\Orchid\Screens\Slide\SlideList;
 use App\Orchid\Screens\User\UserEditScreen;
 use App\Orchid\Screens\User\UserListScreen;
 use App\Orchid\Screens\User\UserProfileScreen;
@@ -30,8 +32,10 @@ use Tabuna\Breadcrumbs\Trail;
 */
 
 // Main
-Route::screen('/main', PlatformScreen::class)
-    ->name('platform.main');
+Route::screen('/main', PlatformScreen::class)->name('platform.main');
+
+Route::screen('/slides', SlideList::class)->name('platform.slides.list');
+Route::screen('/slide/{id?}', SlideEdit::class)->name('platform.slides.edit');
 
 // Platform > Profile
 Route::screen('profile', UserProfileScreen::class)

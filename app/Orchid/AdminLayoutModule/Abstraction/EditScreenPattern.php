@@ -2,7 +2,7 @@
 
     namespace App\Orchid\AdminLayoutModule\Abstraction;
 
-    use App\Orchid\RocontModule\Interfaces\ProtoInterface;
+    use App\Orchid\AdminLayoutModule\Interfaces\ProtoInterface;
     use http\Message;
     use Illuminate\Http\Request;
     use Orchid\Screen\Screen;

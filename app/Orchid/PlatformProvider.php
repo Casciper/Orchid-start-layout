@@ -19,7 +19,6 @@ class PlatformProvider extends OrchidServiceProvider
     {
         parent::boot($dashboard);
 
-        // ...
     }
 
     /**
@@ -28,6 +27,10 @@ class PlatformProvider extends OrchidServiceProvider
     public function registerMainMenu(): array
     {
         return [
+            Menu::make('Слайды')
+                ->icon('map')
+                ->route('platform.slides.list'),
+
             Menu::make('Example screen')
                 ->icon('monitor')
                 ->route('platform.example')

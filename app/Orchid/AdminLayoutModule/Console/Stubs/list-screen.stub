@@ -3,7 +3,7 @@
     namespace App\Orchid\Screens\DirectoryName;
 
     use App\Models\ModelName;
-    use App\Orchid\RocontModule\Abstraction\ListScreenPattern;
+    use App\Orchid\AdminLayoutModule\Abstraction\ListScreenPattern;
     use Orchid\Screen\Actions\Link;
     use Orchid\Screen\TD;
     use Orchid\Support\Facades\Layout;
