@@ -84,4 +84,11 @@
 select.form-control:focus{
     background-color: #fff;
 }
-
+.table-link{
+    transition: .4s;
+}
+.table-link:hover{
+    cursor: pointer;
+    border-left: 1px solid black;
+    transition: .4s;
+}

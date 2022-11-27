@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminSlidesController;
+use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,11 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PagesController::class, 'mainPage'])->name('main-page');
 
-Route::view('/all-items', 'admin.slides.style-layout.all-items');
-Route::view('/all-items-one-btn', 'admin.slides.style-layout.all-items-one-btn');
-Route::view('/without-btn', 'admin.slides.style-layout.without-btn');
-Route::view('/only-title', 'admin.slides.style-layout.only-title');
+Route::get('/all-items', [AdminSlidesController::class, 'getAllItems'])->name('all-items');
+Route::get('/all-items-one-btn', [AdminSlidesController::class, 'getOneBtn'])->name('one-btn');
+Route::get('/without-btn', [AdminSlidesController::class, 'getWithoutBtn'])->name('without-btn');
+Route::get('/only-title', [AdminSlidesController::class, 'getOnlyTitle'])->name('only-title');

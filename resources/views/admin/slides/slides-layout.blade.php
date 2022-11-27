@@ -1,15 +1,8 @@
-@php
-    $currentUrl = url()->current();
-    $currentSlideId = substr($currentUrl, -1);
-    $currentSlide = \App\Models\Slide::query()->where('id', $currentSlideId)->first();
-//    dd($currentSlide)
-@endphp
-
 <fieldset class="mb-3" data-async="">
     <div class="bg-white rounded shadow-sm p-4 py-4 d-flex flex-row justify-content-between">
         <div class="d-flex flex-column">
             <div class="form-group">
-                <x-admin.is-active :name="'item[is_active]'" :title="'Активность'" :help="'Показывать слайд на сайте или нет?'" value="{{ $currentSlide->is_active ?? '' }}"/>
+                <x-admin.is-active :name="'item[is_active]'" :title="'Активность'" :help="'Показывать слайд на сайте или нет?'" value="{{ $currentSlide->is_active ?? '1' }}"/>
             </div>
 
             <div class="form-group ">
@@ -41,6 +34,7 @@
             <x-admin.select
                 :name="'item[layout]'"
                 :title="'Шаблон'"
+                currentValue="{{ $currentSlide->layout ?? '' }}"
                 :id-count="1"
                 :optionsCount="4"
                 :option1="'Заголовок/подзаголовок/две кнопки'" :value1="'/all-items'"
@@ -55,18 +49,42 @@
 <fieldset class="mb-3" data-async="">
     <div class="bg-white rounded shadow-sm p-4 py-4 d-flex flex-row justify-content-between">
         <div class="slide-style-layout-container" id="slide-style-layout-container">
-            <div class="form-group ">
-                <x-admin.input :name="'content[title]'" :title="'Заголовок'" :id-count="1" is-required="true"/>
-            </div>
-            <div class="form-group ">
-                <x-admin.input :name="'content[description]'" :title="'Описание'" :id-count="2" is-required="true"/>
-            </div>
-            <div class="form-group ">
-                <x-admin.input :name="'content[first_btn]'" :title="'Текст первой кнопки'" :id-count="3" is-required="true"/>
-            </div>
-            <div class="form-group ">
-                <x-admin.input :name="'content[second_btn]'" :title="'Текст второй кнопки'" :id-count="4" is-required="true"/>
-            </div>
+
         </div>
     </div>
 </fieldset>
+
+<script>
+
+    function initSelectData(){
+        //select slider value on load page
+        let sliderLayoutStyleContainer = $('#slide-style-layout-container')
+        $.ajax({
+            method: 'get',
+            url: $('#field-itemselect-1').val(),
+            success: function (data) {
+                sliderLayoutStyleContainer.slideUp('', function () {
+                    sliderLayoutStyleContainer.html(data)
+                    sliderLayoutStyleContainer.slideDown('')
+                });
+            }
+        })
+        //select slider value on change check
+        $('#field-itemselect-1').on('change', function () {
+            let sliderLayoutStyleContainer = $('#slide-style-layout-container')
+            $.ajax({
+                method: 'get',
+                url: $(this).val(),
+                success: function (data) {
+                    sliderLayoutStyleContainer.slideUp('', function () {
+                        sliderLayoutStyleContainer.html(data)
+                        sliderLayoutStyleContainer.slideDown('')
+                    });
+                }
+            })
+        })
+    }
+    @if(URL::current() !== URL::previous() || URL::current() === URL::previous())
+        initSelectData()
+    @endif
+</script>

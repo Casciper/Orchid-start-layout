@@ -35,6 +35,7 @@ if ($(window).width() > 768) {
                 $('.header-toggler').css({width: 40 + 'px'})
             })
         }
+
         hideOrOpen()
     }
 
@@ -58,17 +59,19 @@ if ($(window).width() > 768) {
     $('.header-toggler').removeClass('closed')
 }
 
-//select slider value check
-$('#field-itemselect-1').on('change', function () {
-    let sliderLayoutStyleContainer = $('#slide-style-layout-container')
-    $.ajax({
-        method: 'get',
-        url: $(this).val(),
-        success: function (data) {
-            sliderLayoutStyleContainer.slideUp('', function () {
-                sliderLayoutStyleContainer.html(data)
-                sliderLayoutStyleContainer.slideDown('')
-            });
-        }
-    })
+//is active check value
+$('.is_active-check').on('click', function () {
+    if ($(this).val() === '0') {
+        $(this).val('1')
+        return
+    }
+    $(this).val('0')
+})
+//tr table list link
+$(document).on('click', '.table-link', function (e){
+    if ($(this)){
+        window.location.href = $(this).find($('.btn.btn-link')).attr('href')
+    }
+}).on('click', '.btn.btn-success, .btn.btn-danger', function(e) {
+    e.stopPropagation();
 })

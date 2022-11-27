@@ -29,7 +29,7 @@
             return [
                 Layout::table('items', [
                     TD::make('id', 'ID')->width(60)->alignLeft(),
-                    TD::make('title', 'Название')->width(60)->alignLeft(),
+                    TD::make('title', 'Название')->width(150)->alignLeft(),
 
                     TD::make('is_active', 'Активно')->render(function ($item) {
                         $icon = $item->isActive() ? 'check' : 'close';
@@ -41,7 +41,7 @@
                     TD::make('created_at', 'Дата')->width(100)->alignRight()->render(fn ($item) => $item->created_at?->format('d-m-Y')),
                     TD::make()->width(10)->alignRight()->render(fn ($item) => Link::make()->icon('wrench')->route($this->updateRoute, $item)),
                 ]),
-                Layout::modal('switchActiveModal',Layout::rows([]))->title('Изменить активность офиса?')
+                Layout::modal('switchActiveModal',Layout::rows([]))->title('Изменить активность слайда?')
                     ->applyButton('Да')->closeButton('Нет')->async('asyncGetData'),
             ];
         }
