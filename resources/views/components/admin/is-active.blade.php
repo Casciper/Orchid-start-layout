@@ -2,7 +2,7 @@
     'name',
     'title',
     'help',
-    'value'
+    'value' => '0'
 ])
 <label for="field-itemis-active-1" class="form-label">
     {{ $title }}
@@ -13,7 +13,7 @@
     <div class="form-check">
         <input value="{{ $value }}"
                type="checkbox"
-               class="form-check-input"
+               class="form-check-input is_active-check"
                novalue="0"
                yesvalue="1"
                name="{{ $name }}"
@@ -28,3 +28,5 @@
 </div>
 
 <small class="form-text text-muted">{{ $help }}</small>
+
+

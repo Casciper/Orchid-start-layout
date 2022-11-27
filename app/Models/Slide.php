@@ -12,6 +12,7 @@ class Slide extends ProtoModel implements ProtoInterface
     use ActiveScopeTrait;
 
     protected $table = 'slides';
+    protected $casts = ['content' => 'array'];
     protected array $allowedSorts = ['id', 'title', 'is_active', 'created_at'];
     protected array $allowedFilters = ['id', 'title', 'is_active', 'created_at'];
 }

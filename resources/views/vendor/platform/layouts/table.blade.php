@@ -31,7 +31,7 @@
             <tbody>
 
             @foreach($rows as $source)
-                <tr>
+                <tr class="table-link">
                     @foreach($columns as $column)
                         {!! $column->buildTd($source, $loop->parent) !!}
                     @endforeach
@@ -39,7 +39,7 @@
             @endforeach
 
             @if($total->isNotEmpty())
-                <tr>
+                <tr class="table-link">
                     @foreach($total as $column)
                         {!! $column->buildTd($repository, $loop) !!}
                     @endforeach
