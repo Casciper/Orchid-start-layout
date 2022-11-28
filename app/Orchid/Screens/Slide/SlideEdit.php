@@ -27,6 +27,9 @@
         public function layout(): iterable
         {
             return [
+//                Layout::rows([
+//                    Cropper::make('item')
+//                ]),
                 Layout::view('admin.slides.slides-layout')
             ];
         }

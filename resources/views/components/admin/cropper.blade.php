@@ -9,7 +9,7 @@
     'width',
     'height',
     'isRequired' => 'false',
-    'value' => '/'
+    'value' => ''
 ])
 <label for="field-itemtitle-7930a46f20f3253599fe479e60ec8998e71293eb" class="form-label">
     {{ $title }}
@@ -35,7 +35,7 @@
     <div class="border-dashed text-end p-3 cropper-actions">
 
         <div class="fields-cropper-container">
-            <img src="#" class="cropper-preview img-fluid img-full mb-2 border none" alt="">
+            <img src="{{ $value }}" class="cropper-preview img-fluid img-full mb-2 border @if($value !== "") none-remove @endif " alt="">
         </div>
 
         <span class="mt-1 float-start">{{ $uploadText }}</span>
@@ -50,7 +50,7 @@
                     <input type="file" accept="image/*" data-cropper-target="upload" data-action="change->cropper#upload click->cropper#openModal" class="d-none">
                 </label>
 
-                <button type="button" class="btn btn-outline-danger cropper-remove" data-action="cropper#clear">{{ $removeText }}</button>
+                <button type="button" class="btn btn-outline-danger cropper-remove @if($value !== "") none-remove @endif" data-action="cropper#clear">{{ $removeText }}</button>
             </div>
 
         <input type="file" accept="image/*" class="d-none">

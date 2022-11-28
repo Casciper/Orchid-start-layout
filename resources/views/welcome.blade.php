@@ -1,12 +1,4 @@
-{{--<link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />--}}
-{{--<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>--}}
-
-{{--<div id="editor"></div>--}}
-
-{{--<script>--}}
-
-{{--</script>--}}
-    <!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
+<body style="margin: 0">
 @yield('content')
 @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </body>

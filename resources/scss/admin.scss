@@ -81,6 +81,82 @@
     }
 }
 
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 37px;
+    height: 19px;
+    left: 4px;
+    top: 15px;
+    transition: .4s;
+    min-width: 37px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 4px;
+    bottom: 3.5px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2e2e2e;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(17px);
+    -ms-transform: translateX(17px);
+    transform: translateX(17px);
+}
+.switch-label{
+    position: relative;
+    top: 13px;
+    left: 24px;
+    white-space: nowrap;
+}
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.left-3{
+    position: relative;
+    left: -3px;
+}
+
 select.form-control:focus{
     background-color: #fff;
 }
@@ -91,4 +167,52 @@ select.form-control:focus{
     cursor: pointer;
     border-left: 1px solid black;
     transition: .4s;
+}
+
+.none-remove{
+    display: block!important;
+}
+
+body.dark{
+    transition: .2s;
+    .bg-body-dark{
+        background-color: #262626;
+        transition: .2s;
+    }
+    .bg-container-dark{
+        background-color: #1c1c1c!important;
+        transition: .2s;
+    }
+    .bg-sub-container-dark{
+        background-color: #141414!important;
+        transition: .2s;
+    }
+    .bg-top-bar-dark{
+        background-color: #1c1c1c!important;
+        transition: .2s;
+    }
+    .bg-dark-aside{
+        background-color: #1c1c1c!important;
+        transition: .2s;
+    }
+    .white-color{
+        color: #fff;
+        transition: .2s;
+    }
+    p{
+        color: #fff;
+        transition: .2s;
+    }
+    a{
+        color: #fff!important;
+        transition: .2s;
+    }
+    li{
+        transition: .2s;
+        color: #fff;
+    }
+}
+
+body.light{
+    transition: .2s;
 }

@@ -13,7 +13,9 @@
     },
     "dependencies": {
         "hamburgers": "^1.2.1",
+        "jquery": "^3.6.1",
         "sass": "^1.56.1",
-        "sass-loader": "^13.2.0"
+        "sass-loader": "^13.2.0",
+        "slick-slider": "^1.8.2"
     }
 }
