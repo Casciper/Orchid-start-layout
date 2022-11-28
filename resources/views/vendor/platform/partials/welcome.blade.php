@@ -1,4 +1,4 @@
-<div class="bg-white rounded-top shadow-sm mb-3">
+<div class="bg-white rounded-top shadow-sm mb-3 bg-container-white">
 
     <div class="row g-0">
         <div class="col col-lg-7 mt-6 p-4">
@@ -13,11 +13,11 @@
             </p>
         </div>
         <div class="d-none d-lg-block col align-self-center text-end text-muted p-4">
-            <x-orchid-icon path="orchid" width="6em" height="100%"/>
+            <x-orchid-icon class="grey-color" path="orchid" width="6em" height="100%"/>
         </div>
     </div>
 
-    <div class="row bg-light m-0 p-md-4 p-3 border-top rounded-bottom">
+    <div class="row bg-light m-0 p-md-4 p-3 border-top rounded-bottom bg-sub-container-white">
 
         <div class="col-md-6 my-2">
             <h3 class="text-muted fw-light">

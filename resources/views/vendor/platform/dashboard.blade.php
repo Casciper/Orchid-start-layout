@@ -14,7 +14,7 @@
         }
     </style>
 
-    <div class="aside col-xs-12 col-md-2 bg-dark closed" style="width: 60px;min-width: 60px;max-width: 60px;overflow: hidden">
+    <div class="aside col-xs-12 col-md-2 bg-dark closed bg-aside" style="width: 60px;min-width: 60px;max-width: 60px;overflow: hidden">
         <div class="d-md-flex align-items-start flex-column d-sm-block h-full">
 
             <header class="d-sm-flex d-md-block p-3 mt-md-4 w-100 d-flex align-items-center">
@@ -38,8 +38,15 @@
 
                 @includeWhen(Auth::check(), 'platform::partials.profile')
 
-                <ul class="nav flex-column mb-1 ps-0">
+                <ul class="nav flex-column mb-1 ps-0 left-3">
                     {!! Dashboard::renderMenu(\Orchid\Platform\Dashboard::MENU_MAIN) !!}
+                    <li class="d-flex align-items-center">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                        <span class="me-2 switch-label">Светлая тема</span>
+                    </li>
                 </ul>
 
             </nav>
@@ -79,7 +86,7 @@
             </nav>
         @endif
 
-        <div class="@hasSection('navbar') @else d-none d-md-block @endif layout v-md-center">
+        <div class="@hasSection('navbar') @else d-none d-md-block @endif bg-white layout v-md-center bg-top-bar-white">
             <header class="d-none d-md-block col-xs-12 col-md p-0">
                 <h1 class="m-0 fw-light h3 text-black">@yield('title')</h1>
                 <small class="text-muted" title="@yield('description')" style="display: none">@yield('description')</small>

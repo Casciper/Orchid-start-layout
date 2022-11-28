@@ -7,7 +7,7 @@
                 </span>
             @endif
             <span class="d-block small">
-                <span class="text-ellipsis text-white" style="max-width: 12em;">{{Auth::user()->presenter()->title()}}</span>
+                <span class="text-ellipsis" style="max-width: 12em;">{{Auth::user()->presenter()->title()}}</span>
                 <span class="text-muted d-block text-ellipsis">{{Auth::user()->presenter()->subTitle()}}</span>
             </span>
         </a>

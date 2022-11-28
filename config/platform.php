@@ -142,7 +142,7 @@ return [
     */
 
     'attachment' => [
-        'disk'      => env('FILESYSTEM_DISK', 'public'),
+        'disk'      => env('FILESYSTEM_DISK', 'local'),
         'generator' => \Orchid\Attachment\Engines\Generator::class,
     ],
 
